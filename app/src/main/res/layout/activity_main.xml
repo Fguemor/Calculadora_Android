@@ -4,54 +4,133 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#E38DAA"
+    android:backgroundTint="#E6C2CF"
     android:onClick="sumar"
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/b1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="12dp"
+        android:backgroundTint="#EF6695"
+        android:foregroundTint="#F4568C"
         android:onClick="sumar"
-        android:text="Button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Sumar"
+        android:textColor="#130505"
+        app:layout_constraintEnd_toEndOf="@+id/b3"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
 
     <EditText
         android:id="@+id/editTextNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="97dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="46dp"
         android:ems="10"
         android:hint="Primer número "
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <EditText
         android:id="@+id/editTextNumber2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="34dp"
         android:ems="10"
         android:hint="Segundo número"
         android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/editTextNumber"
         app:layout_constraintTop_toBottomOf="@+id/editTextNumber" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="19dp"
+        android:background="#E4F4F6"
+        android:backgroundTint="#EDEFEF"
         android:hint="El resultado es: "
+        android:textColorLink="#090101"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintEnd_toStartOf="@+id/b4"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/b3" />
+
+    <Button
+        android:id="@+id/b2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="46dp"
+        android:layout_marginEnd="66dp"
+        android:backgroundTint="#F46F9D"
+        android:onClick="restar"
+        android:text="Restar"
+        android:textColor="#100202"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNumber2" />
+
+    <Button
+        android:id="@+id/b3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="61dp"
+        android:backgroundTint="#F46294"
+        android:onClick="multiplicar"
+        android:text="Multiplicar"
+        android:textColor="#190505"
+        app:layout_constraintEnd_toStartOf="@+id/b2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/b1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="34dp"
+        android:background="#F16897"
+        android:text="Mi Calculadora"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/b4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="34dp"
+        android:backgroundTint="#F86396"
+        android:onClick="dividir"
+        android:text="Dividir"
+        android:textColor="#1E0F0F"
+        app:iconTint="#0C0404"
+        app:layout_constraintBaseline_toBaselineOf="@+id/b3"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="49dp"
+        android:backgroundTint="#9C27B0"
+        android:onClick="clear"
+        android:text="Clear"
+        android:textColor="#040303"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.488" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
