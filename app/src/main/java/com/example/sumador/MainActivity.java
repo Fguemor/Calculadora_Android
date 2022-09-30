@@ -9,16 +9,15 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-
+    //Declaración de variables
     EditText et1;
     EditText et2;
     TextView tv1;
-    //Declaración de variables para cada Button
     Button b1;
     Button b2;
     Button b3;
     Button b4;
-
+    //Método sobreescrito
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,11 +35,13 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Método Sumar, el cual cogerá los dos valores introducidos
-     * en el EditText y lo sumará
-     *
+     * en el EditText y lo sumará, controlando con un if/else
+     *si no hay números en e1, y et2
      * @param view
      */
     public void sumar(View view) {
+        //Utilizo un if/else, y compruebo si en et1 y et2 con el método matches, si contiene algún número,
+        //si no contiene número, le muestro un mensaje en tv1.
         if (!et1.getText().toString().matches(".*[0-9].*") && !et2.getText().toString().matches(".*[0-9].*")) {
             tv1.setText("Por favor, introduce un número");
         } else {
@@ -49,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
             int n2 = Integer.parseInt(et2.getText().toString());
 
             // Hacemos la suma
+            //declaración e inicializaciónde la variable int
             int suma = n1 + n2;
             // Establecemos el resultado en el TextView
             tv1.setText("" + suma);
@@ -57,12 +59,13 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Método Restar, el cual cogerá los dos valores introducidos
-     * en el EditText y los restará
-     *
+     * en el EditText y los restará,controlando con un if/else
+     * si no hay números en e1, y et2
      * @param view
      */
     public void restar(View view) {
-
+        //Utilizo un if/else, y compruebo si en et1 y et2 con el método matches, si contiene algún número,
+        //si no contiene número, le muestro un mensaje en tv1.
         if (!et1.getText().toString().matches(".*[0-9].*") && !et2.getText().toString().matches(".*[0-9].*")) {
             tv1.setText("Por favor, introduce un número");
         } else {
@@ -70,7 +73,8 @@ public class MainActivity extends AppCompatActivity {
             int n1 = Integer.parseInt(et1.getText().toString());
             int n2 = Integer.parseInt(et2.getText().toString());
 
-            // Hacemos la suma
+            // Hacemos la resta
+            //declaración e inicializaciónde la variable int
             int restar = n1 - n2;
 
             // Establecemos el resultado en el TextView
@@ -80,11 +84,14 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Método Multiplicar, el cual cogerá los dos valores introducidos
-     * en el EditText y los multiplicará
+     * en el EditText y los multiplicará, controlando con un if/else
+     * si no hay números en e1, y et2
      *
      * @param view
      */
     public void multiplicar(View view) {
+        //Utilizo un if/else, y compruebo si en et1 y et2 con el método matches, si contiene algún número,
+        //si no contiene número, le muestro un mensaje en tv1.
         if (!et1.getText().toString().matches(".*[0-9].*") && !et2.getText().toString().matches(".*[0-9].*")) {
             tv1.setText("Por favor, introduce un número");
         } else {
@@ -93,7 +100,8 @@ public class MainActivity extends AppCompatActivity {
             int n1 = Integer.parseInt(et1.getText().toString());
             int n2 = Integer.parseInt(et2.getText().toString());
 
-            // Hacemos la suma
+            // Hacemos la multiplicación
+            //declarando e inicialilzando una variable int
             int multiplicar = n1 * n2;
 
             // Establecemos el resultado en el TextView
@@ -103,11 +111,14 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * Método dividir, el cual cogerá los dos valores introducidos
-     * en el EditText y los dividirá
+     * en el EditText y los dividirá, controlando con un if/else
+     * si no hay números en e1, y et2
      *
      * @param view
      */
     public void dividir(View view) {
+        //Utilizo un if/else, y compruebo si en et1 y et2 con el método matches, si contiene algún número,
+        //si no contiene número, le muestro un mensaje en tv1.
         if (!et1.getText().toString().matches(".*[0-9].*") && !et2.getText().toString().matches(".*[0-9].*")) {
             tv1.setText("Por favor, introduce un número");
         } else {
@@ -116,11 +127,13 @@ public class MainActivity extends AppCompatActivity {
             int n1 = Integer.parseInt(et1.getText().toString());
             int n2 = Integer.parseInt(et2.getText().toString());
 
-
+            //Utillizo otro if/else, por si intentan dividir un número entre 0
             if (n2 == 0) {
                 tv1.setText("ERROR, no se puede dividir por 0");
             } else {
                 // Establecemos el resultado en el TextView
+                //declarando e inicialilzando una variable int
+                //Hacemos la división
                 int dividir = n1 / n2;
                 tv1.setText("" + dividir);
             }
@@ -128,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     *
+     *Método para limpiar et1,et2 y tv1
      * @param view
      */
     public void clear(View view) {
